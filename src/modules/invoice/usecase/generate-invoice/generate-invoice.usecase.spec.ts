@@ -28,6 +28,11 @@ describe("Generetate invoice use case unit test", () => {
           name: "Carro",
           price: 40,
         },
+        {
+          id: "456",
+          name: "Garfo",
+          price: 40,
+        },
       ],
     };
 
@@ -43,7 +48,8 @@ describe("Generetate invoice use case unit test", () => {
     expect(result.city).toEqual(input.city);
     expect(result.state).toEqual(input.state);
     expect(result.zipCode).toEqual(input.zipCode);
-    expect(result.items.length).toBe(1);
+    expect(result.total).toEqual(80);
+    expect(result.items.length).toBe(2);
     expect(result.items[0].id).toBe("123");
     expect(result.items[0].name).toBe("Carro");
     expect(result.items[0].price).toBe(40);
